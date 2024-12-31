@@ -1,0 +1,116 @@
+/* General styles
+The style of the cards is simple:
+- Regular playing cards black all around with different elements
+on the 'front'
+
+The grid has to display the name of the game, a timer, a score board
+& a reset button
+
+The grid has to be a minimum of 4 x 4 (rows & columns)
+
+A win/lose message displays depending on the outcome of the game
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: black;
+  }
+  
+  .game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .info {
+    margin-bottom: 20px;
+  }
+  
+  /* Grid layout for cards */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 120px;
+    background-color: #ccc;
+    border: 2px solid #333;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  
+  .card .front {
+    background-color: #fff;
+    transform: rotateY(180deg);
+  }
+  
+  .card .back {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .card.flipped .front {
+    transform: rotateY(0);
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(180deg);
+  }
+
+  .info p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+  #game-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+  }
+  
+  #game-message.hidden {
+    display: none;
+  }
+  
+  #play-again {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
