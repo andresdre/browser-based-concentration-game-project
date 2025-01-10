@@ -1,5 +1,9 @@
 # browser-based-concentration-game-project
 
+MEMORY GAME
+
+Technologies Used: HTML, JavaScript, CSS
+
 Game Logic:
 
 Generate pairs of cards with matching values or images.
@@ -15,3 +19,4 @@ If they match, leave them revealed.
 If they don’t, flip them back after a short delay.
 Game ends when time has finished or player miss-matched 5 cards
 Player wins if he matches all cards
+
